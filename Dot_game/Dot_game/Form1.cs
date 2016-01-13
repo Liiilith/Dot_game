@@ -233,7 +233,7 @@ namespace Dot_game
 
         private void pictureBox1_MouseClick(object sender, MouseEventArgs e)
         {
-            Open_click(sender, e);
+           // Open_click(sender, e);
 
 
         }
