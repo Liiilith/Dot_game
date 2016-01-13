@@ -114,7 +114,7 @@
             0,
             0});
             this.numericUpDown3.Minimum = new decimal(new int[] {
-            1,
+            2,
             0,
             0,
             0});
@@ -122,7 +122,7 @@
             this.numericUpDown3.Size = new System.Drawing.Size(34, 20);
             this.numericUpDown3.TabIndex = 4;
             this.numericUpDown3.Value = new decimal(new int[] {
-            1,
+            2,
             0,
             0,
             0});
@@ -137,7 +137,7 @@
             0,
             0});
             this.numericUpDown4.Minimum = new decimal(new int[] {
-            1,
+            2,
             0,
             0,
             0});
@@ -145,7 +145,7 @@
             this.numericUpDown4.Size = new System.Drawing.Size(34, 20);
             this.numericUpDown4.TabIndex = 5;
             this.numericUpDown4.Value = new decimal(new int[] {
-            1,
+            2,
             0,
             0,
             0});

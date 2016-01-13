@@ -27,8 +27,8 @@ namespace Dot_game
         //private int dir;
         private int player_num = 2;
         private bool pl3_first_moved = false;
-        private int s_X = 9;
-        private int s_Y = 9;
+        private int s_X = 2;
+        private int s_Y = 2;
         private Gra gra;
         private int s = 60;
         private int borders = 0;
@@ -568,12 +568,12 @@ namespace Dot_game
             return c;
         }
 
-        private void end_of_game()
+        private void end_of_game2()
         {
             int end = gra.czeck_end();
             if (end == 0)
             {
-                int end3 = gra.czeck_pairs();
+                int end3 = gra.czeck_pairs(gra);
                 if (end3 == 0)
                 {
 
@@ -581,7 +581,7 @@ namespace Dot_game
                 }
                 else
                 {
-                    int end2 = gra.czeck_winner();
+                    int end2 = gra.czeck_winner(gra);
                     if (end2 > -1)
                     {
                         string s = "Player: " + end.ToString() + "!";
@@ -589,6 +589,19 @@ namespace Dot_game
                     }
                 }
 
+            }
+
+
+
+        }
+
+        private void end_of_game()
+        {
+            int end = gra.czeck_end2();
+            if (end > -1)
+            {
+                string s = "Player: " + end.ToString() + "!";
+                System.Windows.Forms.MessageBox.Show(s, "END");
             }
 
 

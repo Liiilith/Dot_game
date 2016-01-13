@@ -227,7 +227,7 @@ namespace Dot_game
             {
                 for (int j = 0; j < d_Y - 1; j++)
                 {
-                    if (plansza[i, j].kolor == 0) k++;
+                    if (plansza[i, j].kolor == 0) k=1;
                 }
             }
 
@@ -238,45 +238,86 @@ namespace Dot_game
 
         }
 
-        public int czeck_pairs()
+        public int czeck_pairs(Gra g)
         {
             int k = 0;
             int s = -1;
-            
-            for (int j = 0; j < player.Count()-1; j++)
+            if (g.czeck_end() == 0)
             {
-                for (int i = j+1; i < player.Count(); i++)
+                for (int j = 0; j < player.Count() - 1; j++)
                 {
-                    if (player[i] == player[j])
+                    for (int i = j + 1; i < player.Count(); i++)
                     {
-                        s = 0;
+                        if (player[i] == player[j])
+                        {
+                            s = 0;
+                        }
                     }
                 }
             }
-            
             return s;
 
         }
 
 
 
-        public int czeck_winner()
+        public int czeck_winner(Gra g)
         {
             int k = 0;
             int s = -1;
-
-            int win = 0;
-            for (int i = 1; i < player.Count(); i++)
+            if (g.czeck_end() == 0)
             {
-                if (player[i] > player[win])
+                int win = 0;
+                for (int i = 1; i < player.Count(); i++)
                 {
-                    win = i; s = i;
+                    if (player[i] > player[win])
+                    {
+                        win = i; s = i;
+                    }
                 }
             }
-
             return s;
 
         }
+
+        public int czeck_end2()
+        {
+            int k = 0;
+            int s = -1;
+            for (int i = 0; i < d_X - 1; i++)
+            {
+                for (int j = 0; j < d_Y - 1; j++)
+                {
+                    if (plansza[i, j].kolor == 0) k++;
+                }
+            }
+
+            if (k == 0)
+            {
+                int win = 0;
+                for (int i = 1; i < player.Count(); i++)
+                {
+                    if (player[i] > player[win])
+                    {
+                        win = i; s = i;
+                    }
+                }
+            }
+            return s;
+
+
+        }
+
+
+
+
+
+
+
+
+
+
+
 
     }
 }
