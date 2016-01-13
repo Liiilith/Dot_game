@@ -231,17 +231,49 @@ namespace Dot_game
                 }
             }
 
-            if (k == 0)
+            if (k == 0) s = 0;
+            return s;
+
+
+
+        }
+
+        public int czeck_pairs()
+        {
+            int k = 0;
+            int s = -1;
+            
+            for (int j = 0; j < player.Count()-1; j++)
             {
-                int win = 0;
-                for (int i = 1; i < player.Count(); i++)
+                for (int i = j+1; i < player.Count(); i++)
                 {
-                    if (player[i] > player[win])
+                    if (player[i] == player[j])
                     {
-                        win = i; s = i;
+                        s = 0;
                     }
                 }
             }
+            
+            return s;
+
+        }
+
+
+
+        public int czeck_winner()
+        {
+            int k = 0;
+            int s = -1;
+
+            int win = 0;
+            for (int i = 1; i < player.Count(); i++)
+            {
+                if (player[i] > player[win])
+                {
+                    win = i; s = i;
+                }
+            }
+
             return s;
 
         }
