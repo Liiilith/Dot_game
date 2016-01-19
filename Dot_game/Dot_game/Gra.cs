@@ -54,6 +54,7 @@ namespace Dot_game
                     }
                     if (i == d_X - 1)
                     {
+                        plansza[i, j].kolor = -1;
                         plansza[i, j].border[0] = -1;
                         plansza[i, j].border[2] = -1;
                         plansza[i, j].border[3] = -1;
@@ -61,6 +62,7 @@ namespace Dot_game
                     }
                     if (j == d_Y - 1)
                     {
+                        plansza[i, j].kolor = -1;
                         plansza[i, j].border[1] = -1;
                         plansza[i, j].border[2] = -1;
                         plansza[i, j].border[3] = -1;
@@ -74,6 +76,7 @@ namespace Dot_game
         public bool lineDrawn(int x, int y, int dir)
         {
             //plansza[x, y].ile_kraw++;
+            //if (x >= d_X || y >= d_Y) return false;
             bool res = false;
             if (dir == 1)
             {
@@ -223,9 +226,9 @@ namespace Dot_game
         {
             int k = 0;
             int s = -1;
-            for (int i = 0; i < d_X - 1; i++)
+            for (int i = 0; i < d_X; i++)
             {
-                for (int j = 0; j < d_Y - 1; j++)
+                for (int j = 0; j < d_Y; j++)
                 {
                     if (plansza[i, j].kolor == 0) k=1;
                 }
