@@ -10,97 +10,97 @@ using System.Windows.Forms;
 
 namespace Dot_game
 {
-     public partial class Form1 : Form
+    public partial class Form1 : Form
     {
 
 
-         public static DialogResult ConfigBox(ref string player_num, ref string s_X, ref string s_Y, ref string tryb)
-         {
-             Form form = new Form();
-             Label label1 = new Label();
-             Label label2 = new Label();
-             Label label3 = new Label();
-             Label label4 = new Label();
-             Label label5 = new Label();
-             TextBox textBox4 = new TextBox();
-             TextBox textBox1 = new TextBox();
-             TextBox textBox2 = new TextBox();
-             TextBox textBox3 = new TextBox(); 
-             TextBox textBox = new TextBox();
-             Button buttonOk = new Button();
-             Button buttonCancel = new Button();
+        public static DialogResult ConfigBox(ref string player_num, ref string s_X, ref string s_Y, ref string tryb)
+        {
+            Form form = new Form();
+            Label label1 = new Label();
+            Label label2 = new Label();
+            Label label3 = new Label();
+            Label label4 = new Label();
+            Label label5 = new Label();
+            TextBox textBox4 = new TextBox();
+            TextBox textBox1 = new TextBox();
+            TextBox textBox2 = new TextBox();
+            TextBox textBox3 = new TextBox();
+            TextBox textBox = new TextBox();
+            Button buttonOk = new Button();
+            Button buttonCancel = new Button();
 
-             form.Text = "KONFIGURACJA:";
-             label1.Text = "Liczba graczy";
-             label4.Text = "Rozmiar planszy:";
-             label2.Text = "N:";
-             label3.Text = "M:";
-             label5.Text = "Tryb Gry (0- vs Comp 1- Open)";
-             player_num = textBox1.Text;
-             s_X = textBox2.Text;
-             s_Y = textBox3.Text;
-             tryb = textBox4.Text;
-			 
-            
-             buttonOk.Text = "OK";
-             buttonCancel.Text = "Cancel";
-             buttonOk.DialogResult = DialogResult.OK;
-             buttonCancel.DialogResult = DialogResult.Cancel;
+            form.Text = "KONFIGURACJA:";
+            label1.Text = "Liczba graczy";
+            label4.Text = "Rozmiar planszy:";
+            label2.Text = "N:";
+            label3.Text = "M:";
+            label5.Text = "Tryb Gry (0- vs Comp 1- Open)";
+            player_num = textBox1.Text;
+            s_X = textBox2.Text;
+            s_Y = textBox3.Text;
+            tryb = textBox4.Text;
 
 
-             label5.SetBounds(10, 10, 330, 30);
-             label1.SetBounds(10, 100, 100, 30);
-             label2.SetBounds(10, 190, 15, 30);
-             label3.SetBounds(150, 190, 15, 30);
-             label4.SetBounds(10, 145, 100, 30);
-             textBox4.SetBounds(10, 55, 30, 30);
-             textBox2.SetBounds(210, 190, 30, 30);
-             textBox3.SetBounds(100, 190, 30, 30);
-             textBox1.SetBounds(220, 100, 30, 30);
-             buttonOk.SetBounds(20, 230, 60, 30);
-             buttonCancel.SetBounds(100, 230, 60, 30);
-			
+            buttonOk.Text = "OK";
+            buttonCancel.Text = "Cancel";
+            buttonOk.DialogResult = DialogResult.OK;
+            buttonCancel.DialogResult = DialogResult.Cancel;
 
-             label1.Font = new System.Drawing.Font("Microsoft Sans Serif", 15F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(238)));
-             label1.AutoSize = false;
-             label2.Font = new System.Drawing.Font("Microsoft Sans Serif", 15F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(238)));
-             label2.AutoSize = false;
-             label3.Font = new System.Drawing.Font("Microsoft Sans Serif", 15F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(238)));
-             label3.AutoSize = false;
-             label4.Font = new System.Drawing.Font("Microsoft Sans Serif", 15F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(238)));
-             label4.AutoSize = false;
-             label5.Font = new System.Drawing.Font("Microsoft Sans Serif", 15F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(238)));
-             label5.AutoSize = false;
-             textBox1.AutoSize = false;
-             textBox2.AutoSize = false;
-             textBox3.AutoSize = false;
-             textBox4.AutoSize = false;
-             buttonOk.Anchor = AnchorStyles.Bottom | AnchorStyles.Right;
-             buttonCancel.Anchor = AnchorStyles.Bottom | AnchorStyles.Left;
 
-             form.ClientSize = new Size(350, 270);
-             form.Controls.Add(label1);
-             form.Controls.Add(label2);
-             form.Controls.Add(label3);
-             form.Controls.Add(label4);
-             form.Controls.Add(label5);
-             form.Controls.Add(textBox1);
-             form.Controls.Add(textBox2);
-             form.Controls.Add(textBox3);
-             form.Controls.Add(textBox4);
-             form.Controls.Add(buttonOk);
-             form.Controls.Add(buttonCancel);
-             form.FormBorderStyle = FormBorderStyle.FixedDialog;
-             form.StartPosition = FormStartPosition.CenterScreen;
-             form.MinimizeBox = false;
-             form.MaximizeBox = false;
-             form.AcceptButton = buttonOk;
-             form.CancelButton = buttonCancel;
+            label5.SetBounds(10, 10, 330, 30);
+            label1.SetBounds(10, 100, 100, 30);
+            label2.SetBounds(10, 190, 15, 30);
+            label3.SetBounds(150, 190, 15, 30);
+            label4.SetBounds(10, 145, 100, 30);
+            textBox4.SetBounds(10, 55, 30, 30);
+            textBox2.SetBounds(210, 190, 30, 30);
+            textBox3.SetBounds(100, 190, 30, 30);
+            textBox1.SetBounds(220, 100, 30, 30);
+            buttonOk.SetBounds(20, 230, 60, 30);
+            buttonCancel.SetBounds(100, 230, 60, 30);
 
-             DialogResult dialogResult = form.ShowDialog();
-             
-             return dialogResult;
-         }
+
+            label1.Font = new System.Drawing.Font("Microsoft Sans Serif", 15F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(238)));
+            label1.AutoSize = false;
+            label2.Font = new System.Drawing.Font("Microsoft Sans Serif", 15F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(238)));
+            label2.AutoSize = false;
+            label3.Font = new System.Drawing.Font("Microsoft Sans Serif", 15F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(238)));
+            label3.AutoSize = false;
+            label4.Font = new System.Drawing.Font("Microsoft Sans Serif", 15F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(238)));
+            label4.AutoSize = false;
+            label5.Font = new System.Drawing.Font("Microsoft Sans Serif", 15F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(238)));
+            label5.AutoSize = false;
+            textBox1.AutoSize = false;
+            textBox2.AutoSize = false;
+            textBox3.AutoSize = false;
+            textBox4.AutoSize = false;
+            buttonOk.Anchor = AnchorStyles.Bottom | AnchorStyles.Right;
+            buttonCancel.Anchor = AnchorStyles.Bottom | AnchorStyles.Left;
+
+            form.ClientSize = new Size(350, 270);
+            form.Controls.Add(label1);
+            form.Controls.Add(label2);
+            form.Controls.Add(label3);
+            form.Controls.Add(label4);
+            form.Controls.Add(label5);
+            form.Controls.Add(textBox1);
+            form.Controls.Add(textBox2);
+            form.Controls.Add(textBox3);
+            form.Controls.Add(textBox4);
+            form.Controls.Add(buttonOk);
+            form.Controls.Add(buttonCancel);
+            form.FormBorderStyle = FormBorderStyle.FixedDialog;
+            form.StartPosition = FormStartPosition.CenterScreen;
+            form.MinimizeBox = false;
+            form.MaximizeBox = false;
+            form.AcceptButton = buttonOk;
+            form.CancelButton = buttonCancel;
+
+            DialogResult dialogResult = form.ShowDialog();
+
+            return dialogResult;
+        }
 
 
 
@@ -411,6 +411,206 @@ namespace Dot_game
 
             return res;
         }
-      
+
+
+
+        private void score_upd(int id, int score)
+        {
+            switch (id)
+            {
+                case 0:
+                    L0.Text = Convert.ToString(score);
+                    break;
+                case 1:
+                    L1.Text = Convert.ToString(score);
+                    break;
+                case 2:
+                    L2.Text = Convert.ToString(score);
+                    break;
+                case 3:
+                    L3.Text = Convert.ToString(score);
+                    break;
+                case 4:
+                    L4.Text = Convert.ToString(score);
+                    break;
+                case 5:
+                    L5.Text = Convert.ToString(score);
+                    break;
+                case 6:
+                    L6.Text = Convert.ToString(score);
+                    break;
+                case 7:
+                    L7.Text = Convert.ToString(score);
+                    break;
+                case 8:
+                    L8.Text = Convert.ToString(score);
+                    break;
+
+                default:
+                    break;
+            }
+        }
+
+        public Color set_color(int id)
+        {
+            Color c;
+            switch (id)
+            {
+                case 0:
+                    c = Color.Red;
+                    break;
+                case 1:
+                    c = Color.Blue;
+                    break;
+                case 2:
+                    c = Color.Purple;
+                    break;
+                case 3:
+                    c = Color.Green;
+                    break;
+                case 4:
+                    c = Color.Yellow;
+                    break;
+
+                case 5:
+                    c = Color.Black;
+                    break;
+                case 6:
+                    c = Color.Tomato;
+                    break;
+                case 7:
+                    c = Color.Maroon;
+                    break;
+                default:
+                    c = Color.Magenta;
+                    break;
+            }
+            return c;
+        }
+
+        private void end_of_game2()
+        {
+            int end = gra.czeck_end();
+            if (end == 0)
+            {
+                int end3 = gra.czeck_pairs(gra);
+                if (end3 == 0)
+                {
+
+                    System.Windows.Forms.MessageBox.Show("Remis", "END");
+                }
+                else
+                {
+                    int end2 = gra.czeck_winner(gra);
+                    if (end2 > -1)
+                    {
+                        string s = "Player: " + end.ToString() + "!";
+                        System.Windows.Forms.MessageBox.Show(s, "Winner");
+                    }
+                }
+
+            }
+
+
+
+        }
+
+        private void end_of_game()
+        {
+            int end = gra.czeck_end2();
+            if (end > -1)
+            {
+                string s = "Player: " + end.ToString() + "!";
+                System.Windows.Forms.MessageBox.Show(s, "END");
+                pictureBox1.Enabled = false;
+
+            }
+
+
+
+        }
+
+        public void paint_boxes()
+        {
+            int i = 0;
+            Graphics gg;
+
+
+            gg = pb0.CreateGraphics();
+            System.Drawing.SolidBrush myBrush = new System.Drawing.SolidBrush(Color.White);
+            gg.FillRectangle(myBrush, new Rectangle(0, 0, 17, 17));
+            myBrush = new System.Drawing.SolidBrush(set_color(0));
+            gg.FillRectangle(myBrush, new Rectangle(1, 1, 15, 15));
+            i++;
+
+            gg = pb1.CreateGraphics();
+            myBrush = new System.Drawing.SolidBrush(Color.White);
+            gg.FillRectangle(myBrush, new Rectangle(0, 0, 17, 17));
+
+            myBrush = new System.Drawing.SolidBrush(set_color(1));
+            gg.FillRectangle(myBrush, new Rectangle(1, 1, 15, 15));
+            i++;
+
+            gg = pb2.CreateGraphics();
+            myBrush = new System.Drawing.SolidBrush(Color.White);
+            gg.FillRectangle(myBrush, new Rectangle(0, 0, 17, 17));
+
+            myBrush = new System.Drawing.SolidBrush(set_color(2));
+            gg.FillRectangle(myBrush, new Rectangle(1, 1, 15, 15));
+            i++;
+
+            gg = pb3.CreateGraphics();
+            myBrush = new System.Drawing.SolidBrush(Color.White);
+            gg.FillRectangle(myBrush, new Rectangle(0, 0, 17, 17));
+
+            myBrush = new System.Drawing.SolidBrush(set_color(3));
+            gg.FillRectangle(myBrush, new Rectangle(1, 1, 15, 15));
+            i++;
+
+            gg = pb4.CreateGraphics();
+            myBrush = new System.Drawing.SolidBrush(Color.White);
+            gg.FillRectangle(myBrush, new Rectangle(0, 0, 17, 17));
+
+            myBrush = new System.Drawing.SolidBrush(set_color(4));
+            gg.FillRectangle(myBrush, new Rectangle(1, 1, 15, 15));
+            i++;
+
+            gg = pb5.CreateGraphics();
+            myBrush = new System.Drawing.SolidBrush(Color.White);
+            gg.FillRectangle(myBrush, new Rectangle(0, 0, 17, 17));
+
+            myBrush = new System.Drawing.SolidBrush(set_color(5));
+
+            gg.FillRectangle(myBrush, new Rectangle(1, 1, 15, 15));
+            i++;
+
+            gg = pb6.CreateGraphics();
+            myBrush = new System.Drawing.SolidBrush(Color.White);
+            gg.FillRectangle(myBrush, new Rectangle(0, 0, 17, 17));
+
+            myBrush = new System.Drawing.SolidBrush(set_color(6));
+            gg.FillRectangle(myBrush, new Rectangle(1, 1, 15, 15));
+            i++;
+
+            gg = pb7.CreateGraphics();
+            myBrush = new System.Drawing.SolidBrush(Color.White);
+            gg.FillRectangle(myBrush, new Rectangle(0, 0, 17, 17));
+
+            myBrush = new System.Drawing.SolidBrush(set_color(7));
+            gg.FillRectangle(myBrush, new Rectangle(1, 1, 15, 15));
+            i++;
+
+            gg = pb8.CreateGraphics();
+            myBrush = new System.Drawing.SolidBrush(Color.White);
+            gg.FillRectangle(myBrush, new Rectangle(0, 0, 17, 17));
+
+            myBrush = new System.Drawing.SolidBrush(set_color(8));
+            gg.FillRectangle(myBrush, new Rectangle(1, 1, 15, 15));
+            i++;
+
+
+
+        }
+
     }
 }

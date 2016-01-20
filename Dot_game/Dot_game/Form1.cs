@@ -40,31 +40,27 @@ namespace Dot_game
         public Form1()
         {
             InitializeComponent();
+           
         }
 
 
         private void pictureBox1_MouseClick(object sender, MouseEventArgs e)
         {
 
-
+          
             Point p = e.Location;
             Point versus = new Point();
-            if (tryb == 0)
-            {
-                Open_Comp_click(p);
-            }
-            else
+            if (tryb == 1)
             {
                 Open_click(p);
             }
-            // Open_click(p);
-           // Open_Comp_click(p);
-            int end = gra.czeck_end2();
-            if (end > -1)
+            else
             {
-                string s = "Player: " + end.ToString() + "!";
-                System.Windows.Forms.MessageBox.Show(s, "END");
+                 Open_Comp_click(p);
             }
+            // Open_click(p);
+            // Open_Comp_click(p);
+            upd_points();
 
         }
 
@@ -73,7 +69,7 @@ namespace Dot_game
         private void Open_click(Point p)
         {
             //end_of_game();
-          
+
             if (Mousee_draw(p, c_pl_id))
             {
 
@@ -82,7 +78,7 @@ namespace Dot_game
                 {
                     m_count = true;
                     while (check_all_dotta(c_pl_id)) { fill_all_dotta(c_pl_id); m_count = true; }
-                   // end_of_game();
+                    // end_of_game();
                 }
                 if (m_count)
                 {
@@ -94,16 +90,16 @@ namespace Dot_game
                     c_pl_id++;
                     c_pl_id = c_pl_id % player_num;
                 }
-               // end_of_game();
-                
+                // end_of_game();
+
             }
         }
 
 
         private void Open_Comp_click(Point p)
         {
-          
-           
+
+
             if (Mousee_draw(p, 0))
             {
                 //end_of_game();
@@ -118,50 +114,63 @@ namespace Dot_game
                         m_count = true;
                         //end_of_game(); 
                     }
-                  //  end_of_game();
+                    //  end_of_game();
                 }
                 if (m_count)
                 {
                     m_count = false;
-                   
-                   // end_of_game();
+
+                    // end_of_game();
                 }
                 else
                 {
                     //end_of_game();
                     //c_pl_id++;
                     // c_pl_id = c_pl_id % player_num;
-                    strategy_1(1);
+                    if (tryb == 2) strategy_2(1);
+                    else strategy_1(1);
 
 
                 }
 
             }
-       
-       //     end_of_game();
+
+            //     end_of_game();
+        }
+
+        public void strategy_2(int id)
+        {
+
+            while (check_all_dotta(id)) { fill_all_dotta(id); m_count = true; }
+            // end_of_game();
+            m_oponnent2(id);
+            if (fill_all_dotta(id))
+            {
+                m_count = false;
+                while (check_all_dotta(id)) { fill_all_dotta(id); m_count = true; }
+                //   end_of_game();
+                m_oponnent2(id);
+            }
+            m_count = false;
+            //  end_of_game();
+
         }
 
         public void strategy_1(int id)
         {
 
-
             while (check_all_dotta(id)) { fill_all_dotta(id); m_count = true; }
-           // end_of_game();
+            // end_of_game();
             m_oponnent(id);
             if (fill_all_dotta(id))
             {
                 m_count = false;
                 while (check_all_dotta(id)) { fill_all_dotta(id); m_count = true; }
-             //   end_of_game();
+                //   end_of_game();
                 m_oponnent(id);
             }
-
-
             m_count = false;
-          //  end_of_game();
-          
-
-
+            //  end_of_game();
 
         }
 
@@ -191,6 +200,15 @@ namespace Dot_game
             return res;
         }
 
+        public bool m_oponnent2(int id)
+        {
+
+
+            bool res = reply_rand(id);
+
+
+            return res;
+        }
 
         public bool ortogonal(Point p, int dir, Point ort, int id)
         {
@@ -333,7 +351,8 @@ namespace Dot_game
         private void button1_Click(object sender, EventArgs e)
         {
 
-            if (tryb == 0)
+            paint_boxes();
+            if (tryb != 1)
             {
 
                 player_num = 2;
@@ -564,90 +583,9 @@ namespace Dot_game
 
         }
 
-        public Color set_color(int id)
-        {
-            Color c;
-            switch (id)
-            {
-                case 0:
-                    c = Color.Red;
-                    break;
-                case 1:
-                    c = Color.Blue;
-                    break;
-                case 2:
-                    c = Color.Purple;
-                    break;
-                case 3:
-                    c = Color.Green;
-                    break;
-                case 4:
-                    c = Color.Yellow;
-                    break;
+      
 
-                case 5:
-                    c = Color.Black;
-                    break;
-                case 6:
-                    c = Color.Orange;
-                    break;
-                case 7:
-                    c = Color.Brown;
-                    break;
-                default:
-                    c = Color.Pink;
-                    break;
-            }
-            return c;
-        }
-
-        private void end_of_game2()
-        {
-            int end = gra.czeck_end();
-            if (end == 0)
-            {
-                int end3 = gra.czeck_pairs(gra);
-                if (end3 == 0)
-                {
-
-                    System.Windows.Forms.MessageBox.Show("Remis", "END");
-                }
-                else
-                {
-                    int end2 = gra.czeck_winner(gra);
-                    if (end2 > -1)
-                    {
-                        string s = "Player: " + end.ToString() + "!";
-                        System.Windows.Forms.MessageBox.Show(s, "Winner");
-                    }
-                }
-
-            }
-
-
-
-        }
-
-        private void end_of_game()
-        {
-            int end = gra.czeck_end2();
-            if (end > -1)
-            {
-                string s = "Player: " + end.ToString() + "!";
-                System.Windows.Forms.MessageBox.Show(s, "END");
-                pictureBox1.Enabled = false;
-
-            }
-
-
-
-        }
-
-        private void label7_Click(object sender, EventArgs e)
-        {
-
-        }
-
+     
         private void numericUpDown2_ValueChanged(object sender, EventArgs e)
         {
             NumericUpDown nud = sender as NumericUpDown;
@@ -684,6 +622,38 @@ namespace Dot_game
             this.Close();
 
         }
+
+
+        private void upd_points()
+        {
+            for (int i = 0; i < player_num; i++)
+            {
+                int j = gra.get_points(i);
+                score_upd(i, j);
+            }
+
+        }
+
+        private void Form1_Load(object sender, EventArgs e)
+        {
+
+        }
+
+        private void pictureBox7_Click(object sender, EventArgs e)
+        {
+
+        }
+
+        private void pictureBox6_Click(object sender, EventArgs e)
+        {
+
+        }
+
+        private void pictureBox8_Click(object sender, EventArgs e)
+        {
+
+        }
+
 
     }
 }

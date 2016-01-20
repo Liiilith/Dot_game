@@ -112,6 +112,10 @@ namespace Dot_game
             return res;
         }
 
+        public int get_points( int id)
+        {
+            return player[id];
+        }
 
         public bool czy_zamaluj(int x, int y, int ile)
         {
